@@ -15,7 +15,6 @@ ENV_DIR=$3
 
 LOGGER_FLAGS=""
 
-curl --silent --location https://github.com/tomaslin/heroku-buildpack-jvm-common/archive/0.1.tar.gz | tar xz --strip-components=1
 . bin/util
 . bin/java
 
@@ -43,7 +42,7 @@ fi
 
 # install JDK 
 javaVersion=$(detect_java_version ${BUILD_DIR})
-echo -n "-----> Installing OpenJDK ${javaVersion}..."
+echo -n "-----> Installing OracleJDK ${javaVersion}..."
 install_java ${BUILD_DIR} ${javaVersion}
 jdk_overlay ${BUILD_DIR}
 echo " done"
